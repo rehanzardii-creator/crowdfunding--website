@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HopeFund | Crowdfunding for Social Causes</title>
+<style>
+:root{
+  --primary:#6c5ce7; --secondary:#00b894; --dark:#17202a; --text:#f7f8fc;
+  --muted:#d8dbea; --card:rgba(255,255,255,.14); --border:rgba(255,255,255,.22);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:#11152b;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;border-radius:50%;filter:blur(70px);z-index:-1}
+body:before{width:300px;height:300px;background:#6c5ce7;top:-80px;left:-80px}
+body:after{width:350px;height:350px;background:#00b894;right:-120px;bottom:-100px}
+.container{width:min(1120px,92%);margin:auto}
+.glass{background:var(--card);border:1px solid var(--border);box-shadow:0 8px 32px rgba(0,0,0,.2);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+nav{position:sticky;top:10px;z-index:20;margin:10px auto 0;width:min(1120px,92%);border-radius:20px;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:24px;font-weight:800}.logo span{color:#7ef4d3}
+.navlinks{display:flex;gap:22px;align-items:center}.navlinks a{color:white;text-decoration:none;font-size:15px}
+.btn{border:0;border-radius:14px;padding:13px 20px;font-weight:700;cursor:pointer;background:linear-gradient(135deg,#7b68ee,#6c5ce7);color:white;text-decoration:none;display:inline-block}
+.btn.green{background:linear-gradient(135deg,#00c896,#00a884)}
+.menu{display:none;background:none;border:0;color:white;font-size:26px}
+.hero{min-height:78vh;display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center;padding:70px 0}
+.badge{display:inline-block;background:rgba(0,184,148,.18);border:1px solid rgba(126,244,211,.35);color:#9af5dc;padding:8px 14px;border-radius:99px;font-size:14px}
+h1{font-size:clamp(38px,6vw,70px);line-height:1.05;margin:18px 0}.hero p{font-size:18px;line-height:1.7;color:var(--muted);max-width:650px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.hero-card{padding:28px;border-radius:28px}.hero-card h3{margin-top:0}
+.stat{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--border)}
+section{padding:65px 0}.section-title{text-align:center;margin-bottom:34px}.section-title h2{font-size:36px;margin:0 0 10px}.section-title p{color:var(--muted);margin:auto;max-width:650px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{border-radius:22px;padding:22px}.icon{font-size:34px}.card h3{margin:12px 0 8px}.card p{color:var(--muted);line-height:1.6}
+.campaigns{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.campaign{padding:20px;border-radius:24px}.campaign .emoji{font-size:48px}.campaign h3{margin-bottom:8px}.campaign p{color:var(--muted);line-height:1.55}.progress{height:10px;background:rgba(255,255,255,.13);border-radius:20px;overflow:hidden;margin:16px 0 8px}.progress div{height:100%;background:linear-gradient(90deg,#00c896,#7ef4d3);border-radius:20px}.small{font-size:14px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{padding:24px;border-radius:22px;text-align:center}.number{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;margin:0 auto 15px;background:#6c5ce7;font-weight:bold}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:25px}.about .panel{padding:28px;border-radius:24px}.about p{color:var(--muted);line-height:1.7}
+footer{padding:30px 0;text-align:center;color:var(--muted)}
+@media(max-width:800px){
+  .navlinks{display:none;position:absolute;top:70px;left:0;right:0;padding:18px;border-radius:18px;flex-direction:column}
+  .navlinks.show{display:flex}.menu{display:block}
+  .hero,.about{grid-template-columns:1fr}.hero{padding:45px 0}
+  .cards,.campaigns,.steps{grid-template-columns:1fr}
+  nav{top:6px}.hero-card{order:-1}
+}
+</style>
+</head>
+<body>
+<nav class="glass">
+  <div class="logo">Hope<span>Fund</span></div>
+  <div class="navlinks glass" id="navlinks">
+    <a href="#home">Home</a><a href="#campaigns">Campaigns</a><a href="#how">How It Works</a><a href="#about">About</a>
+    <a href="#campaigns" class="btn">Donate Now</a>
+  </div>
+  <button class="menu" onclick="document.getElementById('navlinks').classList.toggle('show')">☰</button>
+</nav>
+
+<main class="container">
+<section class="hero" id="home">
+  <div>
+    <span class="badge">❤ Together, we can create social change</span>
+    <h1>Small Donations.<br>Big Social Impact.</h1>
+    <p>HopeFund is a simple crowdfunding platform where people can support education, healthcare, food, environment and other social causes. Easy to use on mobile and laptop.</p>
+    <div class="actions">
+      <a class="btn green" href="#campaigns">Explore Campaigns</a>
+      <a class="btn" href="#how">How It Works</a>
+    </div>
+  </div>
+  <div class="hero-card glass">
+    <h3>Community Impact</h3>
+    <div class="stat"><span>👥 Supporters</span><strong>2,450+</strong></div>
+    <div class="stat"><span>💝 Donations</span><strong>₹8.5L+</strong></div>
+    <div class="stat"><span>🎯 Social Campaigns</span><strong>75+</strong></div>
+    <p class="small">Every contribution helps communities and social initiatives move one step forward.</p>
+  </div>
+</section>
+
+<section>
+<div class="section-title"><h2>What Can You Support?</h2><p>Choose a cause that matters to you and contribute in a few simple steps.</p></div>
+<div class="cards">
+  <div class="card glass"><div class="icon">🎓</div><h3>Education</h3><p>Support students, school supplies, scholarships and learning programs.</p></div>
+  <div class="card glass"><div class="icon">🏥</div><h3>Healthcare</h3><p>Help community health programs and essential medical support.</p></div>
+  <div class="card glass"><div class="icon">🌱</div><h3>Environment</h3><p>Fund clean-up drives, tree planting and environmental awareness.</p></div>
+</div>
+</section>
+
+<section id="campaigns">
+<div class="section-title"><h2>Featured Campaigns</h2><p>Examples of social causes that people can support through the platform.</p></div>
+<div class="campaigns">
+  <div class="campaign glass"><div class="emoji">📚</div><h3>Books for Every Child</h3><p>Providing books and learning materials to children in need.</p><div class="progress"><div style="width:78%"></div></div><div class="small">78% of goal reached</div><br><button class="btn green" onclick="donate('Books for Every Child')">Support</button></div>
+  <div class="campaign glass"><div class="emoji">🍲</div><h3>Community Food Drive</h3><p>Helping provide nutritious meals to families facing hardship.</p><div class="progress"><div style="width:62%"></div></div><div class="small">62% of goal reached</div><br><button class="btn green" onclick="donate('Community Food Drive')">Support</button></div>
+  <div class="campaign glass"><div class="emoji">🌳</div><h3>Green Neighborhood</h3><p>Supporting local tree plantation and cleaner public spaces.</p><div class="progress"><div style="width:45%"></div></div><div class="small">45% of goal reached</div><br><button class="btn green" onclick="donate('Green Neighborhood')">Support</button></div>
+</div>
+</section>
+
+<section id="how">
+<div class="section-title"><h2>How It Works</h2><p>A simple and easy crowdfunding process for everyone.</p></div>
+<div class="steps">
+  <div class="step glass"><div class="number">1</div><h3>Choose a Cause</h3><p class="small">Browse social campaigns and select the cause you want to support.</p></div>
+  <div class="step glass"><div class="number">2</div><h3>Make a Donation</h3><p class="small">Enter your contribution amount and confirm your support.</p></div>
+  <div class="step glass"><div class="number">3</div><h3>Create Impact</h3><p class="small">Your contribution helps the campaign move closer to its goal.</p></div>
+</div>
+</section>
+
+<section id="about">
+<div class="about">
+  <div class="panel glass"><h2>About HopeFund</h2><p>This website is a college project demonstrating a responsive crowdfunding platform for social causes. The design focuses on simplicity, accessibility and easy navigation for both mobile and laptop users.</p></div>
+  <div class="panel glass"><h2>Why Crowdfunding?</h2><p>Crowdfunding allows many people to contribute small amounts toward a common goal. It can connect donors with meaningful social initiatives and encourage community participation.</p><a class="btn" href="#home">Back to Top ↑</a></div>
+</div>
+</section>
+</main>
+
+<footer>© 2026 HopeFund • Crowdfunding Platform Development for Social Cause</footer>
+
+<script>
+function donate(cause){
+  alert("Thank you for supporting: " + cause + "\\n\\nThis is a college project demo. No real payment will be collected.");
+}
+</script>
+</body>
+</html>
